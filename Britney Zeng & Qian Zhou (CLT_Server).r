@@ -1,5 +1,5 @@
 #CLT_server
-server <- function(input, output, session){
+server <- shinyServer(function(input, output, session){
   
   #Defining population function for storing population data
   population <- reactive({ #executes the code inside {} and render data to population object
@@ -61,6 +61,6 @@ server <- function(input, output, session){
     qqnorm(smpl_mean())
     qqline(smpl_mean(), col = "blue",lwd=2)
   })
-}
+})
 
-shinyApp(ui, server)
+shinyApp(ui,server)
